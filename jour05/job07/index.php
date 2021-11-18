@@ -35,10 +35,12 @@ function select ()
     {
         echo gras($str);
     }
+
     else if ($_POST["fonction"] == 'plateforme') 
     {
         echo plateforme($str);
     }
+    
     else if ($_POST["fonction"] == 'cesar') 
     {
         echo cesar($str, 2);
