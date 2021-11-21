@@ -4,8 +4,9 @@ $sq = mysqli_connect("localhost", "root", "", "jour08");
 
 mysqli_set_charset($sq, "utf8");
 
-$selct = mysqli_query($sq, "SELECT prenom, nom, naissance FROM etudiants WHERE sexe = 'Femme' ");
-
+$selct = mysqli_query($sq, "SELECT prenom, nom, naissance 
+                            FROM `etudiants` 
+                            WHERE naissance BETWEEN '1998-01-01' AND '2018-12-31'");
 $etudiants = mysqli_fetch_all($selct, MYSQLI_ASSOC);
 
 mysqli_close($sq)
@@ -19,7 +20,7 @@ mysqli_close($sq)
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>jour09-job03</title>
+    <title>jour09-job12</title>
 </head>
 <body>
     <table>
@@ -35,7 +36,7 @@ mysqli_close($sq)
         <tr>
             <td> <?= $tabetudiants['prenom']; ?> </td>
             <td> <?= $tabetudiants['nom']; ?> </td>
-            <td> <?= $tabetudiants['naissance']."<br>"; ?> </td>
+            <td> <?= $tabetudiants['naissance']; ?> </td>
         </tr>
     <?php }; ?>
 </tbody>

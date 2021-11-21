@@ -22,8 +22,7 @@ mysqli_close($sq)
     <title>jour09-job05</title>
 </head>
 <body>
-
-<table>
+    <table>
         <thead>
             <tr>
                 <th>Id</th>
@@ -34,28 +33,18 @@ mysqli_close($sq)
                 <th>Email</th>
             </tr>
         </thead>
-    <tbody>
+<tbody>
+    <?php foreach ($etudiants as $tabetudiants) { ?>
         <tr>
-            <td>
-                <?php foreach ($etudiants as $tabetudiants) { echo $tabetudiants['id']."<br>"; } ?>
-            </td>
-            <td>
-                <?php foreach ($etudiants as $tabetudiants) { echo $tabetudiants['prenom']."<br>"; } ?>
-            </td>
-            <td>
-                <?php foreach ($etudiants as $tabetudiants) { echo $tabetudiants['nom']."<br>"; } ?>
-            </td>
-            <td>
-                <?php foreach ($etudiants as $tabetudiants) { echo $tabetudiants['naissance']."<br>"; } ?>
-            </td>
-            <td>
-                <?php foreach ($etudiants as $tabetudiants) { echo $tabetudiants['sexe']."<br>"; } ?>
-            </td>
-            <td>
-                <?php foreach ($etudiants as $tabetudiants) { echo $tabetudiants['email']."<br>"; } ?>
-            </td>
+            <td> <?= $tabetudiants['id']; ?> </td>
+            <td> <?= $tabetudiants['prenom']; ?> </td>
+            <td> <?= $tabetudiants['nom']; ?> </td>
+            <td> <?= $tabetudiants['naissance']; ?> </td>
+            <td> <?= $tabetudiants['sexe']; ?></td>
+            <td> <?= $tabetudiants['email']; ?></td>
         </tr>
-    </tbody>
-</table>
+    <?php }; ?>
+</tbody>
+    </table>
 </body>
 </html>
