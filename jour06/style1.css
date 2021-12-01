@@ -1,0 +1,15 @@
+body 
+{
+    background-color: #433b6d;
+}
+
+form 
+{
+    background-color: #76eff3;
+}
+
+input[type=submit] 
+{
+    width: 100px;
+    box-shadow: 1px 1px 1px #120fecb6;
+}
